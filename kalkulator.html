@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue page</title>
+</head>
+<body>
+
+<h1>Vue Example</h1>
+
+<div id="app">
+  Tugas membuat kalkulator sederhana dengan Vue.js<br><br>
+  Hasil: {{ hasil }} <br>
+  <input v-model="angka1" type="number"><br>
+  <input v-model="angka2" type="number"><br>
+  <button @click="hasil = angka1 + angka2">+</button>
+  <button @click="hasil = angka1 - angka2">-</button>
+  <button @click="hasil = angka1 * angka2">*</button>
+  <button @click="hasil = angka1 / angka2">/</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        angka1: 0,
+        angka2: 0,
+        hasil: 0,
+      }
+    }
+  })
+
+  app.mount('#app')
+</script>
+
+</body>
+</html>
